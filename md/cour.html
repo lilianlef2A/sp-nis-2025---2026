@@ -1,41 +1,57 @@
+### Le langage HTML
 
-le plus souvent les balise html sont en couple (ouvrante/fermante) mais il existe aussi des balises *orpheline*:
-- `<balises></balises>`
-la structure minimale d'une page web est:
+1. HTML
+
+HyperText Markup Language *Langage de balises hypertexte*
+
+Un fichier `.html` est un fichier de texte (comme le markdown par exemple). On ouvre un fichier de 2 façons:
+- le développeur => avec un éditeur de code (ex: VisualStudio Code)
+- l'utilisateur => avec un navigateur (ex: firefox)
+
+Le plus souvent les balises html sont en couple (ouvrante/fermante) mais il existe aussi des balises *orpheline*:
+- `<MaBalise></MaBalise>`
+- `<Mabalise>`
+
+La structure minimale d'une page web est:
+
 ```html
 <!DOCTYPE html>
-<html>
+<html>  
 <head></head>
 <body></body>
 </html>
 ```
-le site de ref pour les langage du web est le site des developeur de modzila 
-[https://developer.mozilla.org/fr/docs/Web/HTML](https://developer.mozilla.org/fr/docs/Web/HTML)
 
-quelque balise a conaitre
-`<body></body>` contient tout ce qui est visible sur la page 
-`<head></head>` contient tout ce qui est
-`<h1></h1>` permet de fair un titre 
-`<p></p>`   permet de fair un paragraphe 
-`<a></a>` acroche le curseur pour cliqué sur un lien 
-`<br>` pour casser la ligne 
-`<img src="">` pour inceré une image 
-`<ul></ul>` pour liste sans ordre 
-`<ol></ol>` pour liste ordoné 
-`<li></li>` pour insérer des items dans une liste 
-les balise ouvrante peuve contenire des atribue def sur le site de ref (modzila) ou l'atribue `classe=""` : <br>
-<maBalise attribut=""></maBalise>
+Le site de référence pour les langages du WEB est le site des développeurs de Mozilla.
+[https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements)
 
---------------------------------------------------------------------
-pour donner le chemin relatif vers un fichier on utilise :
-- `./`pour chercher dans le dossier courant
-- `../`pour chercher dans le dossier dessus
+Quelques balises à connaître:
+- `<body></body>` contient tout ce qui est visible sur la page
+- `<head></head>` contient ce qui n'est pas visible sur la page (ex `<title></title>`)
+- `<h1></h1>` permet de faire de titres sur la page
+- `<p></p>` permet de faire un paragraphe
+- `<a href=""></a>` permet d'accrocher le curseur pour cliquer vers un lien
+- `<br>` pour casser la ligne
+- `<img src="">` pour insérer une image
+- `<ul></ul>` pour réaliser une liste sans ordre
+- `<ol></ol>` pour réaliser une liste ordonnée
+- `<li></li>` pour insérer des items dans une liste
 
-2. CSS
-cascading style sheet
+
+Les balises ouvrantes peuvent contenir des attributs définis sur le site de référence ou l'attribut `class=""`:<br>
+`<maBalise attribut=""></maBalise>`
+
+---------------
+Pour donner le chemin relatif vers un fichier, on utilise:
+- `./` pour chercher dans le dossier courant
+- `../` pour chercher dans le dossier du dessus
+
+
+2. Le CSS
+Cascading Style Sheet *feuille de style en cascade*
 [https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties)
 
-pour définir du style il faut un sélecteur (élément html ou class), des accolades une propriété et une valeur 
+Pour définir du style, il faut un sélecteur (element HTML ou class), des accolades, une propriété, une valeur.
 
 ```css
 selecteur{
@@ -44,26 +60,61 @@ selecteur{
 
 ```
 
-on peut écrire le css :
-- dans le ficher html entre les balises`<style></style>`
+On peut écrire le CSS:
+- dans le fichier html entre les balises `<style></style>`
+- dans un fichier dédié avec l'extension `.css` ; il faut ajouter
+une balise `<link rel="stylesheet" href="">`
 
-on peut ecrire en css :
-dans le fichier entre les balise <style></style>
-dans un fichier css 
-il faut ajouter une balise <link rel="stylesheet" href="">
 
-il existe plus de 500 propriété et de valeur posible,
-mais souvent les valeur sont 
-- des couleur (rgb 0-255 ,0-255 ,0-255)
-- des tailles, plusieur unité son posible : 
-    - `px`pour pixels
-    - `em` relatif a la taille de la police 
-    - `%` relatif a la taille de la page 
-rem : quand le selecteur css est un element html (par exemple `p`)
-alors les propriétés s'appliquent à tous les élément de meme type 
+Il existe plus de 500 propriétés et encore davantage de valeurs possibles mais souvent, les valeurs sont :
+- des couleurs (soit un nom soit un code comme rgb(0-255, 0-255, 0-255))
+- des tailles : plusieurs unités sont possibles
+    - `px` pour pixels
+    - `em` relatif à la taille de la police
+    - `%` relatif à la taille du contenant
 
-pour diférencier des élément de meme nature, on peut utilisé l'atibut `classe` ou `id`. dans ce cas le selecteur est le nom de la classe précédé d'un : `.`ou le nom de l'identifiant précédé d'un `#`
-rem:  le contenue d'un element html suit le principe d'une boite.
-[https://www.w3schools.com/css/css_boxmodel.asp]
-3 propriété inporante son lier a ce model 
-- `border` pour le style de la bordure 
+
+Rem: Qannd le sélecteur css est un élément HTML (par exemple `p`) alors les propriétés s'appliquent à tous les éléments du même type.
+
+Pour différencier des éléments de même nature, on peut utiliser l'attribut `class` ou `id`. Dans ce cas, le sélecteur est le nom de la classe précédé d'un `.` ou le nom de l'identifiant précédé d'un `#`.
+
+
+Rem: Le contenu d'un élément HTML suit le principe du modèle en boîte.
+[https://www.w3schools.com/css/css_boxmodel.asp](https://www.w3schools.com/css/css_boxmodel.asp)
+
+
+Trois propriétés importantes sont liées à ce modèle:
+- `border` pour le style de la bordure
+- `padding` pour l'espace interne
+- `margin` pour la marge autour de la bordure
+
+
+Rem: Il existe des propriétés spécifiques au texte, en parfticulier:
+- `text-align` pour justifier le texte.
+- `font` pour la police de caractères
+
+
+
+Ils existe deux balises HTML universelles qui permettent de grouper des éléments ou du texte:
+- `<div></div>`
+-`<span></span>`
+
+3. javascript 
+
+il s'agit d'un langage de programation comme python mais initialement dédié au Web
+
+c'est un langage prévue pour interagire avec une page html : le document peut ce présanté insie 
+image du DOM 
+il permet de rendre une page plus dinamique grace au formulaire 
+
+les élément interactife son generalement des <input> :
+- button 
+- checkbox 
+- texte
+pour écrire du js on utilise les balise `<script></script>`
+- on écrie directement le cod dans le fichier html 
+- on écrie dans un fichier .js 
+
+pour attreper un élément dur la page afin de le manipuler avec js, on peut utiliser :
+- `querySelector()`
+- `getElementById()`
